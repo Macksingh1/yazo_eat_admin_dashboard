@@ -5,7 +5,7 @@ const ConfigurableValues = () => {
   const configuration = useContext(ConfigurationContext)
 
   const SERVER_URL = 'https://yazoeatbackend-production.up.railway.app/'
-  const WS_SERVER_URL = 'ws://yazoeatbackend-production.up.railway.app/'
+  const WS_SERVER_URL = 'wss://yazoeatbackend-production.up.railway.app/'
 //  const SERVER_URL = 'http://localhost:8001'
 //  const WS_SERVER_URL = 'ws://localhost:8001'
   const GOOGLE_MAPS_KEY = "AIzaSyCnaRLTOgMiFrDsofmY3B1NtOYZuzLapDI" //configuration.googleApiKey
