@@ -32,28 +32,28 @@ function DeliveryBoundsAndLocation() {
   const theme = useTheme()
   const restaurantId = localStorage.getItem('restaurantId')
 
+  const [marker, setMarker] = useState({ lat: -37.8142454, lng: 144.9631732 })
   const [drawBoundsOrMarker, setDrawBoundsOrMarker] = useState('marker') // polygon
   const [successMessage, setSuccessMessage] = useState('')
   const [errorMessage, setErrorMessage] = useState('')
 
-  const [center, setCenter] = useState({ lat: 33.684422, lng: 73.047882 })
-  const [marker, setMarker] = useState({ lat: 33.684422, lng: 73.047882 })
+  const [center, setCenter] = useState({ lat: -37.8142454, lng: 144.9631732 })
   const [path, setPath] = useState([
     {
-      lat: 33.6981335731709,
-      lng: 73.036895671875
+      lat: -37.6981335731709,
+      lng: 144.036895671875
     },
     {
-      lat: 33.684779099960515,
-      lng: 73.04650870898438
+      lat: -37.684779099960515,
+      lng: 144.04650870898438
     },
     {
-      lat: 33.693206228391965,
-      lng: 73.06461898425293
+      lat: -37.693206228391965,
+      lng: 144.06461898425293
     },
     {
-      lat: 33.706880699271096,
-      lng: 73.05410472491455
+      lat: -37.706880699271096,
+      lng: 144.05410472491455
     }
   ])
   const polygonRef = useRef()
@@ -302,11 +302,12 @@ function DeliveryBoundsAndLocation() {
                   const bounds = transformPath(path)
                   let variables = {
                     id: restaurantId,
-                    location,
+                    //location,
                     boundType: "Polygon",
                     address: "nil",
                     location, bounds
                   };
+                  console.log(location, bounds)
           
                   variables = {
                     ...variables,

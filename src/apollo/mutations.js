@@ -818,7 +818,7 @@ export const createRestaurant = `mutation CreateRestaurant($restaurant:Restauran
     cuisines
   }
 }`
-
+/*  Deleted by Mack to avoid error from schema file, this is how it looked previously: 
 export const updateDeliveryBoundsAndLocation = `mutation UPDATE_DELIVERY_BOUNDS_AND_LOCATION( $id: ID!
     $boundType: String!
     $bounds: [[[Float!]]]
@@ -837,6 +837,35 @@ export const updateDeliveryBoundsAndLocation = `mutation UPDATE_DELIVERY_BOUNDS_
       address: $address
       postCode: $postCode
       city: $city
+    ) {
+      success
+      message
+      data {
+        _id
+        deliveryBounds {
+          coordinates
+        }
+        location {
+          coordinates
+        }
+      }
+  }
+}`
+*/
+
+export const updateDeliveryBoundsAndLocation = `mutation UPDATE_DELIVERY_BOUNDS_AND_LOCATION( $id: ID!
+    
+    $bounds: [[[Float!]]]
+    
+    $location: CoordinatesInput!)
+    {
+
+    result: updateDeliveryBoundsAndLocation(
+      id: $id
+      
+      bounds: $bounds
+      location: $location
+    
     ) {
       success
       message

@@ -64,7 +64,7 @@ const Zone = props => {
   const [center] = useState(
     props.zone
       ? setCenter(props.zone.location.coordinates[0])
-      : { lat: 33.684422, lng: 73.047882 }
+      : { lat: -37.68540310624247, lng: 144.56642810618766 }
   )
 
   const polygonRef = useRef()

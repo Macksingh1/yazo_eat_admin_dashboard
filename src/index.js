@@ -20,6 +20,9 @@ import App from './app'
 import { RestProvider } from './context/Restaurant'
 import { ThemeProvider, StyledEngineProvider } from '@mui/material'
 import theme from './utils/theme'
+// Added by Mack
+import { LoadScript } from '@react-google-maps/api'
+import GoogleMapsLoader from './components/GoogleMapsLoader/GoogleMapsLoader'
 
 function Main() {
   const { SERVER_URL, WS_SERVER_URL } = ConfigurableValues()
@@ -92,14 +95,14 @@ function Main() {
             'geometry',
             'localContext',
             'visualization'
-          ]}> */}
+          ]}>  */}
 
         <StyledEngineProvider injectFirst>
           <ThemeProvider theme={theme}>
             <RestProvider>
               {/* <GoogleMapsLoader> */}
               <App />
-              {/* </GoogleMapsLoader> */}
+               {/* </GoogleMapsLoader>  */}
             </RestProvider>
           </ThemeProvider>
         </StyledEngineProvider>
